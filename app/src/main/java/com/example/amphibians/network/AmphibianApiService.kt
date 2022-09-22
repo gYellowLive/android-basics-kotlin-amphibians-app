@@ -35,11 +35,12 @@ private val retrofit = Retrofit.Builder()
     .build()
 interface AmphibianApiService {
     // TODO: Declare a suspended function to get the list of amphibians
-    @GET("Amphibians")
+    @GET("android-basics-kotlin-unit-4-pathway-2-project-api.json")
     suspend fun getAmphibians(): List<Amphibian>
 }
 
 // TODO: Create an object that provides a lazy-initialized retrofit service
 object AmphibianApi {
-    val retrofitService : AmphibianApi by lazy { retrofit.create(AmphibianApiService::class.java)}
+    val retrofitService : AmphibianApiService by lazy {
+        retrofit.create(AmphibianApiService::class.java) }
 }
